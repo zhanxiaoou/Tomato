@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#87CEEB">
+    
+        <Button 
+        android:id="@+id/title_setting"
+        android:background="#87CEEB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="5dip"
+        android:text="设置"
+        android:textSize="24sp"
+        android:textColor="#ffffff"
+        />
+    
+	   <TextView 
+	    android:id="@+id/title_text"
+	    android:layout_width="0dip"
+	    android:layout_height="wrap_content"
+	    android:layout_gravity="center"
+	    android:layout_weight="1"
+	    android:gravity="center"
+	    android:text="番茄工作法"
+	    android:textSize="24sp"
+	    android:textColor="#ffffff"
+	    />
+	   
+        <Button 
+        android:id="@+id/title_add"
+        android:background="#87CEEB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="5dip"
+        android:gravity="center"
+        android:text="添加"
+        android:textSize="24sp"
+        android:textColor="#ffffff"
+        />
+</LinearLayout>
