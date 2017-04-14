@@ -1,6 +1,7 @@
 package com.example.tomato;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -29,6 +30,13 @@ public class MainActivity extends Activity {
 			}
 		});
 	
+		add.setOnClickListener(new OnClickListener(){
+			@Override
+			public void onClick(View v){
+				Dialog dialog = new DialogLayout(MainActivity.this);
+				dialog.show();
+			}
+		});
 
 	}
 }
