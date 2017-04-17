@@ -1,7 +1,6 @@
 package com.example.tomato;
 
 import android.app.Activity;
-import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,7 +8,7 @@ import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements SettingListener{
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState){
@@ -21,7 +20,7 @@ public class MainActivity extends Activity {
 		Button setting = (Button)findViewById(R.id.title_setting);
 		Button add = (Button)findViewById(R.id.title_add);
 	
-		//对按钮设置监听器
+		//对按钮设置监听器,设置按钮
 		setting.setOnClickListener(new OnClickListener(){
 			@Override
 			public void onClick(View v){
@@ -29,14 +28,22 @@ public class MainActivity extends Activity {
 				startActivity(intent);
 			}
 		});
-	
+		
+		//对按钮设置监听器,任务按钮，实现任务添加，此处用到回调方法，onSetting()是MainActivity的回调方法
 		add.setOnClickListener(new OnClickListener(){
 			@Override
 			public void onClick(View v){
-				Dialog dialog = new DialogLayout(MainActivity.this);
+				DialogLayout dialog = new DialogLayout(MainActivity.this);
+				dialog.setOnSettingListener(MainActivity.this);
 				dialog.show();
 			}
 		});
 
+	}
+
+	@Override
+	public void onSetting(String s1, String s2, String s3, String s4) {
+		// TODO Auto-generated method stub
+		
 	}
 }
