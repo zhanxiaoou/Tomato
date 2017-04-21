@@ -14,7 +14,7 @@ public class SettingActivity extends Activity {
 		//创建activity页面，隐藏标题栏
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
-		setContentView(R.layout.setting);
+		setContentView(R.layout.list_setting);
 		
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(
 				SettingActivity.this,android.R.layout.simple_list_item_1,data);

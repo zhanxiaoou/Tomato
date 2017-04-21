@@ -1,5 +1,8 @@
 package com.example.tomato;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,15 +10,24 @@ import android.view.View;
 import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ListView;
 
 public class MainActivity extends Activity implements SettingListener{
 	
+	private List<Task> taskList = new ArrayList<Task>();
 	@Override
 	protected void onCreate(Bundle savedInstanceState){
 		//创建activity页面，隐藏标题栏
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.main);
+		
+		
+
+		TaskAdapter adapter = new TaskAdapter(MainActivity.this,R.layout.item_task,taskList);
+		ListView listView = (ListView)findViewById(R.id.main_list_view);
+		listView.setAdapter(adapter);
+		
 		
 		Button setting = (Button)findViewById(R.id.title_setting);
 		Button add = (Button)findViewById(R.id.title_add);
@@ -41,9 +53,11 @@ public class MainActivity extends Activity implements SettingListener{
 
 	}
 
+
+
 	@Override
 	public void onSetting(String s1, String s2, String s3, String s4) {
-		// TODO Auto-generated method stub
-		
+		Task t = new Task(s1,s2,s3,s4);
+		taskList.add(t);
 	}
 }

@@ -14,23 +14,28 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int main_list_view=0x7f060006;
+        public static final int item_rest_time=0x7f060009;
+        public static final int item_task_name=0x7f060006;
+        public static final int item_tomato_number=0x7f060007;
+        public static final int item_tomato_time=0x7f060008;
+        public static final int main_list_view=0x7f06000b;
         public static final int negative=0x7f060005;
         public static final int number=0x7f060001;
         public static final int positive=0x7f060004;
         public static final int resttime=0x7f060003;
-        public static final int setting_list_view=0x7f060007;
+        public static final int setting_list_view=0x7f06000a;
         public static final int task=0x7f060000;
-        public static final int title_add=0x7f06000a;
-        public static final int title_setting=0x7f060008;
-        public static final int title_text=0x7f060009;
+        public static final int title_add=0x7f06000e;
+        public static final int title_setting=0x7f06000c;
+        public static final int title_text=0x7f06000d;
         public static final int tomatotime=0x7f060002;
     }
     public static final class layout {
         public static final int dialog=0x7f030000;
-        public static final int main=0x7f030001;
-        public static final int setting=0x7f030002;
-        public static final int title=0x7f030003;
+        public static final int item_task=0x7f030001;
+        public static final int list_setting=0x7f030002;
+        public static final int main=0x7f030003;
+        public static final int title=0x7f030004;
     }
     public static final class string {
         public static final int app_name=0x7f040000;
