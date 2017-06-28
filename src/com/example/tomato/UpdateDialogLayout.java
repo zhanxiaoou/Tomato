@@ -9,13 +9,11 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-public class DialogLayout extends Dialog implements android.view.View.OnClickListener{
+public class UpdateDialogLayout extends Dialog implements android.view.View.OnClickListener{
 	
-    private SettingListener mSListener; 
-
+    private UpdateListener uListener; 
 	
-    int mOp;
-	public DialogLayout(Context context, int op){		
+	public UpdateDialogLayout(Context context){		
 		super(context);	
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.dialog);	
@@ -25,11 +23,11 @@ public class DialogLayout extends Dialog implements android.view.View.OnClickLis
 		pos.setOnClickListener(this);
 		Button neg = (Button)findViewById(R.id.negative);
 		neg.setOnClickListener(this);
-		
-		mOp = op;
 	}
 	
-
+	public UpdateDialogLayout(Context context, int theme){
+		super(context, theme);
+	} 
 
 	@Override
 	public void onClick(View v) {
@@ -49,19 +47,10 @@ public class DialogLayout extends Dialog implements android.view.View.OnClickLis
 		
 		switch(b.getId()){
 			case R.id.positive:
-				switch(mOp){
-				case 0:mSListener.onAdd(("任务："+task.getText().toString()),
-												("番茄个数："+number.getText().toString()),
-													("番茄时间："+tomato.getText().toString()),
-														("休息时间："+rest.getText().toString()));
-				case 1:mSListener.onUpdate(("任务："+task.getText().toString()),
-												("番茄个数："+number.getText().toString()),
-														("番茄时间："+tomato.getText().toString()),
-															("休息时间："+rest.getText().toString()));
-				default:
-					break;
-				}
-				
+				uListener.onUpdate(("任务："+task.getText().toString()),
+										("番茄个数："+number.getText().toString()),
+											("番茄时间："+tomato.getText().toString()),
+												("休息时间："+rest.getText().toString()));
 					
 
 				dismiss();
@@ -73,11 +62,10 @@ public class DialogLayout extends Dialog implements android.view.View.OnClickLis
 		
 	}
 
-    public void setOnSettingListener(SettingListener listener) {
-    	mSListener = listener;
+    public void setOnUpdateListener(UpdateListener listener) {
+    	uListener = listener;
     }
 	
-
 
 
 }

@@ -5,12 +5,14 @@ public class Task {
 	private String tNumber;
 	private String tTomato;
 	private String tRest;
+
 	
 	public Task(String tName,String tNumber,String tTomato,String tRest){
 		this.tName = tName;
 		this.tNumber = tNumber;
 		this.tTomato = tTomato;
 		this.tRest = tRest;
+
 	}
 
 	public String gettName(){
@@ -28,5 +30,24 @@ public class Task {
 	public String gettRest(){
 		return tRest;
 	}
+	
+
+	public void settName(String tName){
+		this.tName = tName;
+	}
+
+	public void settNumber(String tNumber){
+		this.tNumber = tNumber;
+	}
+	
+	public void settTomato(String tTomato){
+		this.tTomato = tTomato;
+	}
+	
+	public void settRest(String tRest){
+		this.tRest = tRest;
+	}
+	
+
 }
 
